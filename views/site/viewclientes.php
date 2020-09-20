@@ -14,11 +14,14 @@ use yii\helpers\Html;
 <?php
 foreach($model as $row):
 ?>
+<tr>
 <td><?=$row->id?></td>
 <td><?=$row->nombre?></td>
 <td><?=$row->direccion?></td>
 <td><?=$row->automovil?></td>
+</tr>
 <?php
 endforeach
 ?>
+
 </table>

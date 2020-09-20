@@ -22,7 +22,7 @@ class formClientes extends Model
    ['telefono', 'required', 'message' => 'Campo requerido'],
    ['telefono', 'match', 'pattern' => "/^[0-9]{10}$/", 'message' => 'Ingrese numero valido'],
    ['direccion', 'required', 'message' => 'Campo requerido'],
-   ['direccion', 'match', 'pattern' => '/^[a-záéíóúñ\s]+$/i', 'message' => 'Sólo se aceptan letras'],
+   ['direccion', 'match', 'pattern' => '/^[a-záéíóúñ0-9\s]+$/i', 'message' => 'Sólo se aceptan letras'],
    ['direccion', 'match', 'pattern' => '/^.{3,50}$/', 'message' => 'Mínimo 3 máximo 50 caracteres'],
    ['automovil', 'required', 'message' => 'Campo requerido'],
    ['automovil', 'match', 'pattern' => '/^[a-záéíóúñ\s]+$/i', 'message' => 'Sólo se aceptan letras'],

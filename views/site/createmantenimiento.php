@@ -29,6 +29,10 @@ use app\models\Clientes;
  <?= $form->field($model, "fechaMantenimiento")->input("date") ?>   
 </div>
 
+<div class="form-group">
+ <?= $form->field($model, "descripcion")->input("textarea") ?>
+</div>
+
 <?= Html::submitButton("Guardar", ["class" => "btn btn-primary"]) ?>
 
 <?php $form->end() ?>

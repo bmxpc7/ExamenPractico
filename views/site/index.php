@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 ?>
-<a href="<?=Url::toRoute("site/createcliente")?>" class="btn btn-primary">Agregar Cliente</a>
+<a href="<?=Url::toRoute("site/createmantenimiento")?>" class="btn btn-primary">Agregar Mantenimiento</a>
 <h3>Lista de Mantenimientos</h3>
 
 <?= 

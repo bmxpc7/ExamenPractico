@@ -156,12 +156,14 @@ class SiteController extends Controller
                $table -> atiende = $model->atiende;
                $table -> fechaRegistro = $model->fechaRegistro;
                $table -> fechaMantenimiento = $model->fechaMantenimiento;
+               $table -> descripcion = $model->descripcion;
                $table -> idCliente = $model->idCliente;
                if($table->insert()){
                    $msg = "Mantenimiento Guardado Correctamente";
                    $model->atiende = null;
                    $model->fechaRegistro = null;
                    $model->fechaMantenimiento = null;
+                   $model->descripcion = null;
                }else{
                    $msg = "Error Al Guardar Mantenimiento";
                }
