@@ -4,7 +4,6 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-use app\yii\db\Query;
 
 
 class Mantenimiento extends ActiveRecord
@@ -17,4 +16,9 @@ class Mantenimiento extends ActiveRecord
     {
         return 'mantenimiento';
     }
+
+    public function getClientes()
+{
+    return $this->hasOne(Clientes::className(), ['id' => 'idCliente']);
+}
 }

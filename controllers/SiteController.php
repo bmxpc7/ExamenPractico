@@ -14,8 +14,7 @@ use app\models\FormClientes;
 use app\models\formMantenimiento;
 use app\models\Mantenimiento;
 use app\models\Clientes;
-use app\models\Join;
-use app\yii\db\Query;
+use yii\data\SqlDataProvider;
 
 class SiteController extends Controller
 {
@@ -69,13 +68,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $table = new Mantenimiento;
-        $query = 'SELECT c.nombre, m.atiende, m.fechaRegistro, m.fechaMantenimiento, c.automovil
+        $count = Yii::$app->db->createCommand("select COUNT(*) from mantenimiento")->queryScalar();
+        $dataProvider = new SqlDataProvider([
+        'sql' => 'SELECT c.nombre , m.atiende, m.fechaRegistro, m.fechaMantenimiento, c.automovil
         FROM mantenimiento m
         INNER JOIN clientes c
-        ON m.idCliente = c.id';
-        $model = $table->findBySql($query)->asArray()->all();
-        return $this->render('index', ["model"=>$model]);
+        ON m.idCliente = c.id',
+        'sort'=>[
+            'attributes'=>["nombre","atiende", "fechaRegistro", "fechaMantenimiento", "automovil"],
+        ],
+
+]);
+        return $this->render('index', ["dataProvider"=>$dataProvider]);
     }
 
     /**
