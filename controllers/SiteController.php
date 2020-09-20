@@ -160,8 +160,8 @@ class SiteController extends Controller
                if($table->insert()){
                    $msg = "Mantenimiento Guardado Correctamente";
                    $model->atiende = null;
-                   $model->fecharegistro = null;
-                   $model->fechamantenimiento = null;
+                   $model->fechaRegistro = null;
+                   $model->fechaMantenimiento = null;
                }else{
                    $msg = "Error Al Guardar Mantenimiento";
                }

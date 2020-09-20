@@ -22,11 +22,11 @@ use app\models\Clientes;
 </div>
 
 <div class="form-group">
- <?= $form->field($model, "fechaRegistro")->input("text") ?>   
+ <?= $form->field($model, "fechaRegistro")->input("date") ?>   
 </div>
 
 <div class="form-group">
- <?= $form->field($model, "fechaMantenimiento")->input("text") ?>   
+ <?= $form->field($model, "fechaMantenimiento")->input("date") ?>   
 </div>
 
 <?= Html::submitButton("Guardar", ["class" => "btn btn-primary"]) ?>
